@@ -2,6 +2,17 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 
+
+let AvoShopper = require("./avo-shopper");
+const pg = require("pg");
+const Pool = pg.Pool;
+
+const connectionString = process.env.DATABASE_URL || 'postgresql://coderr:1996@localhost:5432/avo_shopper';
+
+const pool = new Pool({
+    connectionString
+});
+
 const app = express();
 const PORT =  process.env.PORT || 3019;
 
@@ -17,24 +28,55 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
-let counter = 0;
+
 
 app.get('/', function(req, res) {
 	res.render('index', {
-		counter
+		
 	});
 });
 
-app.post('/basket/add', async function(req, res) {
+app.get('/addShop', function(req, res) {
+	res.render('addShop');
+});
+
+app.get('/listShop', async function(req, res) {
+    const shops = await AvoShopper.listShops()
+	res.render('listShop', {
+        shops
+    });
+});
+
+app.get('/addAvo', function(req, res) {
+	res.render('addAvo');
+});
+
+app.get('/newDeal', async function(req, res) {
+    const deal = await AvoShopper.createDeal()
+	res.render('newDeal', {
+        deal
+    });
+});
+
+app.post('/addAvo', async function(req, res) {
+	const shop = req.params.name;
+	const qty = req.body.qty;
+	const price = req.body.fruit_id;
+
+	await AvoShopper.createDeal(shop, qty, price);
+
+	res.redirect('/newDeal')
+});
+
+app.post('/addShop', async function(req, res) {
     try {
-		await fruitBasket.createBasket(req.body.basket_name);
+		await AvoShopper.createShop(req.body.name);
 	} catch (err){
 
 	}
-	res.redirect('/')
+	res.redirect('/addShop')
 });
 
-// start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function() {
 	console.log(`AvoApp started on port ${PORT}`)
 });

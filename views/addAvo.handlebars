@@ -2,23 +2,39 @@
     <div class="overlay">
         <div class="container">
             <div class="header center">
-                <h2>best deals</h2>
+                <h2>add new deal</h2>
             </div>
         </div>
 
-        <form action="/basket/add" method="post">
+<form action="/addAvo" method="post">
 
-	<div class="m1">
-		<label for="basket_name">Basket name</label>
-		<input class="m-1 p-1" type="text" name="basket_name" id="">
+
+
+	<div class="inputs input">
+		<label for="">Select Shop Name</label><select name="name">
+			<option value="">Select Shop For Deal</option>
+				{{#each name}}
+	<option value="" class="option">{{name}}</option>
+		{{/each}}
+		</select>
 	</div>
 
-	<div class="m1">
-		<input class="m-1 p-1" type="submit">
+	<div class="inputs">
+		<label>Quantity</label>
+		<input type="number" name="qty">
 	</div>
+
+    <div class="inputs">
+		<label>Price</label>
+		<input type="number" name="price">
+	</div>
+
+	<div class="button center">
+		<input type="submit" >
+	</div>
+
 
 </form>
-
       
     </div>
 </div>

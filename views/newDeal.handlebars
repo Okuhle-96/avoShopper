@@ -1,0 +1,27 @@
+<div class="background">
+    <div class="overlay">
+        <div class="container">
+            <div class="header center">
+                <h2>new deals</h2>
+            </div>
+
+           
+
+	<table>
+		<tr>
+			<th>Shop</th>
+			<th>Qty</th>
+			<th>Price</th>
+		</tr>
+		{{#each dealItem}}
+		<tr>
+			<td>{{name}}</td>
+			<td>{{qty}}</td>
+			<td>{{total_price}}</td>
+		</tr>
+		{{/each}}
+	</table>
+
+        </div>
+        </div>
+    </div>

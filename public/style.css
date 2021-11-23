@@ -5,6 +5,10 @@
     margin: 30px;
 }
 
+.newsho {
+    height: 900px;
+}
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.57);
     height:1100px;
@@ -56,4 +60,71 @@
     width: 150px;
     text-align: center;
     font-weight: bolder;
+}
+
+.addShop {
+    width: 60;
+}
+
+.inputs {
+    display: flex;
+    width: 45%;
+    margin: auto;
+}
+
+.input {
+    display: flex;
+    width: 40%;
+    margin-left: 200px;
+    margin: auto;
+}
+
+.input label {
+    margin-left: 130px;
+    padding-top: 10px;
+}
+
+.inputs label {
+    color: white;
+
+    font-weight: bolder;
+    font-size: large;
+    padding:10px;
+}
+
+.inputs .text {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-left: 30px;
+    color: white;
+}
+
+.button input{
+    width: 200px;
+    color: white;
+    border: 0;
+    font-size: 17px;
+    font-weight: bolder;
+    background-color: burlywood;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.inputs select {
+    width: 250px;
+    padding: 20px;
+    font-size: 17px;
+    font-weight: bolder;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-left: 30px;
+    color: white;
+}
+
+.option {
+    background-color: white;
+    color: darkolivegreen;
+    
 }
