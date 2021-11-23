@@ -1,0 +1,59 @@
+.background {
+    background-image: url(./images/rr.jpg);
+    background-size: cover;
+    height:1100px;
+    margin: 30px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.57);
+    height:1100px;
+    /* margin: 10px; */
+}
+
+.header {
+    padding-top: 30px;
+}
+
+.header  h2{
+    font-size: 70px;
+    font-weight: bolder;
+    color: white;
+    margin-top: 30px;
+    text-transform: lowercase;
+}
+
+.deals {
+    margin-top: 50px;
+    display: flex;
+}
+
+.deal {
+    width: 25%;
+    padding: 20px;
+    /* border: 10px solid white; */
+    margin: 20px;
+}
+
+.deal img {
+    width: 200px;
+    height: 150px;
+}
+
+.deal h4 {
+    color: white;
+}
+
+.deal p {
+    color: white;
+}
+
+.deal button {
+    background-color: burlywood;
+    color: white;
+    padding: 15px;
+    border: 0;
+    width: 150px;
+    text-align: center;
+    font-weight: bolder;
+}
